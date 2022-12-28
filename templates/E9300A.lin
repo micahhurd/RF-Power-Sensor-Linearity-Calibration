@@ -1,0 +1,46 @@
+# data file for calibrating E9304AH19 Linearity
+dutModel = E9300A
+sGen = R&S SMA
+sGenVisaResource = GPIB0::19::INSTR
+pMeter = Keysight EPM
+pMeterVisaResource = GPIB0::13::INSTR
+stepAttenuator = Keysight 11713A
+stepAttVisaResource = GPIB0::23::INSTR
+# Currently only supports dB units
+uom = db
+biasMsmtQty = 1000
+
+# Shorter settling time increases the likelyhood of a false failure.
+settlingTime = 3
+
+#Sampling Quantity needs to be set to an appropriate value for the uncertainty calculation to be valid.
+samplingQuantity = 32
+
+# The sampling interval specifies the qty of time (seconds) between each sensor measurement (float or int)
+sampling_intv = 0.001
+
+# Frequency must be in Hz
+test_frequency = 50000000
+excelSource = linearity.xlsx
+rowOffset = 8
+excelSheetName = Sheet1
+pdfMerge = no
+
+# Linearity Steps are in dBm; must be integers
+linSteps = -36, -35, -34, -33, -32, -31, -30, -29, -28, -27, -26, -25, -24, -23, -22, -21, -20, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+
+# Lineraity Tolerance is in percent
+tol =	  3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+
+
+# Must be one of the steps listed in linSteps, an integer
+refStepSetting = -9
+
+
+
+
+
+
+
+
+

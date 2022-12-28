@@ -1,0 +1,53 @@
+# data file for calibrating U8400 Series Linearity
+dutModel = U848xA
+sGen = R&S SMA
+sGenVisaResource = GPIB0::28::INSTR
+pMeter = Keysight EPM
+pMeterVisaResource = GPIB0::13::INSTR
+stepAttenuator = Keysight 11713A
+stepAttVisaResource = GPIB0::23::INSTR
+# Currently only supports dB units
+uom = db
+biasMsmtQty = 100
+# Shorter settling time increases the likelyhood of a false failure.
+settlingTime = 5
+
+#Sampling Quantity needs to be set to an appropriate value for the uncertainty calculation to be valid.
+samplingQuantity = 11
+
+# The sampling interval specifies the qty of time (seconds) between each sensor measurement (float or int)
+sampling_intv = 0.1
+
+# Frequency must be in Hz
+test_frequency = 50000000
+excelSource = linearity.xlsx
+rowOffset = 8
+excelSheetName = Sheet1
+pdfMerge = no
+
+# Linearity Steps are in dBm; must be integers
+linSteps = -1,  0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+
+# Lineraity Tolerance is in percent
+tol =	  0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.80,0.80,0.80,0.80,0.80,0.80,
+
+# Must be one of the steps listed in linSteps, an integoer
+refStepSetting = 20
+
+# Following settings are for the zero cal test, if required
+performZeroSetCal = yes
+appliedPowerFlagLevel = -25
+zeroSetQtyOfSamples = 1
+zeroSetQtyOfRuns = 10
+zeroSetToleranceWatts = 0.000000025
+
+# SCPI commands related to The Zero Set test
+pmConfigZS = test INIT:CONT OFF, UNIT:POW DBM, CAL:TYPE INT, FREQ 50MHz, AVER:COUN:AUTO OFF
+pmTrigMeas = INIT:IMM
+pmAvgQuery = SENS1:AVER:COUN:AUTO?
+pmAutoAvgOn = AVER:COUN 100
+
+
+
+
+

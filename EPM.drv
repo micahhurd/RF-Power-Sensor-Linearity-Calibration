@@ -1,0 +1,23 @@
+pmID = *IDN?
+pmRst = SYST:PRES DEF
+pmZero = CAL1:ZERO:AUTO ONCE
+pmCal = CAL:AUTO ONCE
+pmFreq = FREQ <val>
+pmdBmeas = UNIT:POW DBM
+pmConfig = INIT:CONT ON; UNIT:POW DBM
+pmOpc = *OPC?
+pmRead = FETC?
+
+pmConfigZS = INIT:CONT OFF; UNIT:POW DBM; CAL:ZERO:TYPE EXT; FREQ 50MHz; AVER:COUN:AUTO OFF
+pmExtZero = CAL:ZERO:TYPE EXT
+pmIntZero CAL:ZERO:TYPE INT
+pmTrigMeas = INIT:IMM
+pmAvgQuery = SENS1:AVER:COUN:AUTO?
+pmAutoAvgOn = AVER:COUN 1024
+pmRangeAuto = SENS:POW:AC:RANG:AUTO ON
+pmRangeSet = SENS:POW:AC:RANG <val>
+pmRangeRead = SENS:POW:AC:RANG?
+
+
+
+

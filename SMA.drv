@@ -1,0 +1,18 @@
+sGenID = *IDN?
+sGenRst = *RST
+sGenFreqSet = FREQ <val>
+sGenPowSet = POW <val>
+sGenFreqRead = FREQ?
+sGenPowRead = POW?
+sGenConfig = *RST
+sGenOn = OUTP:STAT 1
+sGenOff = OUTP:STAT 0
+unlevel_err_check = SYSTem:ERRor:STATic?
+unlevel_err_response = -221,"Settings conflict;Pep value greater than defined limit"
+
+
+
+
+
+
+

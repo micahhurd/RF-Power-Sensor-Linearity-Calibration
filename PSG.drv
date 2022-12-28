@@ -1,0 +1,16 @@
+sGenID = *IDN?
+sGenRst = *RST
+sGenFreqSet = FREQ <val>
+sGenPowSet = POW <val>
+sGenFreqRead = FREQ?
+sGenPowRead = POW?
+sGenConfig = OUTP:MODE SOUR; :OUTP:ROUT HEAD; :ROSC:SOUR INT; UNIT:POW DBM
+sGenOn = OUTP:STAT 1
+sGenOff = OUTP:STAT 0
+unlevel_err_check = STAT:QUES:POW:COND?
+unlevel_err_response = +2
+
+
+
+
+
